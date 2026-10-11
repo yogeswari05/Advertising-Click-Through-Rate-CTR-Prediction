@@ -4,14 +4,17 @@
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Tests: Pytest Passing](https://img.shields.io/badge/tests-10%20passed-brightgreen.svg)](tests/)
 
-An industrial-grade, scientifically rigorous machine learning project predicting display ad click-through rates ($P(\text{click}=1 \mid \mathbf{x})$) on authentic ad-impression logs from the **Criteo Display Advertising Challenge**. Designed to demonstrate end-to-end applied machine learning, probability calibration, and auction ranking methodology.
+An industrial-grade, scientifically rigorous machine learning project predicting display ad click-through rates (P(click = 1 | X)) on authentic ad-impression logs from the **Criteo Display Advertising Challenge**. Designed to demonstrate end-to-end applied machine learning, probability calibration, and auction ranking methodology.
 
 ---
 
 ## 1. Project Overview & Motivation
 
 In digital advertising systems, auction rank and pricing depend directly on estimating Click-Through Rate (CTR):
-$$\text{eCPM} = \text{pCTR} \times \text{Bid}_{\text{CPC}} \times 1000$$
+
+```text
+eCPM = pCTR * Bid_CPC * 1000
+```
 
 Accurate CTR prediction requires:
 - **Strict Probability Estimation**: Log-loss and probability calibration matter more than binary accuracy.
@@ -38,9 +41,9 @@ Evaluated on 15,000 chronological held-out test impressions (following 70k train
 ## 3. Key Controlled Experiments & Scientific Insights
 
 1. **Categorical Rare-Category Thresholding Ablation**:
-   - Pruning categories with frequency $< 10$ yielded 11,888 sparse dimensions and a Test ROC-AUC of **0.7768**. Pruning aggressively at $< 50$ (2,632 dimensions) degraded ROC-AUC to 0.7723, confirming that long-tail categorical IDs hold valuable predictive signal when regularized.
+   - Pruning categories with frequency `< 10` yielded 11,888 sparse dimensions and a Test ROC-AUC of **0.7768**. Pruning aggressively at `< 50` (2,632 dimensions) degraded ROC-AUC to 0.7723, confirming that long-tail categorical IDs hold valuable predictive signal when regularized.
 2. **Numerical Log1p Transformation Ablation**:
-   - Applying $\log(1 + \max(0, x))$ to right-skewed count features improved Test ROC-AUC by **+0.0181** (from 0.7587 to 0.7768) and reduced Log Loss by **0.0145**, by mitigating outlier leverage on standardization and gradient steps.
+   - Applying `log(1 + max(0, x))` to right-skewed count features improved Test ROC-AUC by **+0.0181** (from 0.7587 to 0.7768) and reduced Log Loss by **0.0145**, by mitigating outlier leverage on standardization and gradient steps.
 3. **Probability Calibration**:
    - Applying Isotonic Regression further refined calibration, reducing Expected Calibration Error (ECE) to **0.00711**.
 
