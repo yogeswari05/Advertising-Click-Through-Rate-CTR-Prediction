@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ctr-prediction"
+version = "0.1.0"
+description = "Industrial-grade Click-Through Rate (CTR) Prediction and Probability Estimation System"
+authors = [{ name = "Yedu Krishnan" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "pandas>=1.4.0",
+    "scikit-learn>=1.1.0",
+    "lightgbm>=3.3.0",
+    "xgboost>=1.6.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "pyyaml>=6.0",
+    "requests>=2.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-timeout>=2.1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

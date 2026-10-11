@@ -1,0 +1,78 @@
+# Environment configuration and reproducibility settings
+data:
+  url: "https://maxhalford.github.io/files/datasets/criteo_sample.csv.gz"
+  raw_path: "data/raw/criteo_sample.csv.gz"
+  expected_num_rows: 100000
+  target_column: "click"
+  numerical_features:
+    - "I1"
+    - "I2"
+    - "I3"
+    - "I4"
+    - "I5"
+    - "I6"
+    - "I7"
+    - "I8"
+    - "I9"
+    - "I10"
+    - "I11"
+    - "I12"
+    - "I13"
+  categorical_features:
+    - "C1"
+    - "C2"
+    - "C3"
+    - "C4"
+    - "C5"
+    - "C6"
+    - "C7"
+    - "C8"
+    - "C9"
+    - "C10"
+    - "C11"
+    - "C12"
+    - "C13"
+    - "C14"
+    - "C15"
+    - "C16"
+    - "C17"
+    - "C18"
+    - "C19"
+    - "C20"
+    - "C21"
+    - "C22"
+    - "C23"
+    - "C24"
+    - "C25"
+    - "C26"
+
+split:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  strategy: "chronological" # Preserve row order from streaming logs without random shuffling
+
+preprocessing:
+  numerical_imputer_strategy: "median"
+  apply_log1p: true
+  scale_numerical: true
+  min_category_frequency: 10
+  sparse_output: true
+
+models:
+  random_state: 42
+  logistic_regression:
+    solver: "lbfgs"
+    max_iter: 1000
+    C: 0.1
+    class_weight: null
+  lightgbm:
+    n_estimators: 300
+    learning_rate: 0.05
+    num_leaves: 31
+    min_child_samples: 50
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    n_jobs: -1
+    early_stopping_rounds: 30

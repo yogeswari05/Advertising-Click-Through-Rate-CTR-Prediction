@@ -1,0 +1,3 @@
+min_category_frequency,feature_dim,val_log_loss,val_roc_auc,test_log_loss,test_roc_auc
+10,11888,0.44287,0.77302,0.45303,0.7768
+50,2632,0.44831,0.76589,0.45647,0.77232

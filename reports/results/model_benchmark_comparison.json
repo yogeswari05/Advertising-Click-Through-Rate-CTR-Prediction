@@ -1,0 +1,68 @@
+[
+  {
+    "model": "baseline",
+    "train_time_sec": 2.13,
+    "inference_time_sec": 0.0,
+    "val_log_loss": 0.53366,
+    "val_roc_auc": 0.5,
+    "val_pr_auc": 0.2254,
+    "val_brier_score": 0.1746,
+    "val_ece": 0.00077,
+    "test_log_loss": 0.54828,
+    "test_roc_auc": 0.5,
+    "test_pr_auc": 0.2372,
+    "test_brier_score": 0.18109,
+    "test_ndcg@5": 0.37388,
+    "test_ece": 0.01257,
+    "test_confusion_matrix": {
+      "TN": 11442,
+      "FP": 0,
+      "FN": 3558,
+      "TP": 0
+    }
+  },
+  {
+    "model": "logistic_regression",
+    "train_time_sec": 4.15,
+    "inference_time_sec": 0.002,
+    "val_log_loss": 0.44287,
+    "val_roc_auc": 0.77302,
+    "val_pr_auc": 0.53252,
+    "val_brier_score": 0.1418,
+    "val_ece": 0.00699,
+    "test_log_loss": 0.45303,
+    "test_roc_auc": 0.7768,
+    "test_pr_auc": 0.54262,
+    "test_brier_score": 0.14585,
+    "test_ndcg@5": 0.67491,
+    "test_ece": 0.00484,
+    "test_confusion_matrix": {
+      "TN": 10882,
+      "FP": 560,
+      "FN": 2537,
+      "TP": 1021
+    }
+  },
+  {
+    "model": "lightgbm",
+    "train_time_sec": 6.53,
+    "inference_time_sec": 0.156,
+    "val_log_loss": 0.44531,
+    "val_roc_auc": 0.77088,
+    "val_pr_auc": 0.52498,
+    "val_brier_score": 0.14276,
+    "val_ece": 0.00599,
+    "test_log_loss": 0.45226,
+    "test_roc_auc": 0.77801,
+    "test_pr_auc": 0.54581,
+    "test_brier_score": 0.14575,
+    "test_ndcg@5": 0.69168,
+    "test_ece": 0.00826,
+    "test_confusion_matrix": {
+      "TN": 10936,
+      "FP": 506,
+      "FN": 2604,
+      "TP": 954
+    }
+  }
+]

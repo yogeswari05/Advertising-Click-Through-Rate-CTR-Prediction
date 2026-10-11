@@ -1,0 +1,4 @@
+model,train_time_sec,inference_time_sec,val_log_loss,val_roc_auc,val_pr_auc,val_brier_score,val_ece,test_log_loss,test_roc_auc,test_pr_auc,test_brier_score,test_ndcg@5,test_ece,test_confusion_matrix
+baseline,2.13,0.0,0.53366,0.5,0.2254,0.1746,0.00077,0.54828,0.5,0.2372,0.18109,0.37388,0.01257,"{'TN': 11442, 'FP': 0, 'FN': 3558, 'TP': 0}"
+logistic_regression,4.15,0.002,0.44287,0.77302,0.53252,0.1418,0.00699,0.45303,0.7768,0.54262,0.14585,0.67491,0.00484,"{'TN': 10882, 'FP': 560, 'FN': 2537, 'TP': 1021}"
+lightgbm,6.53,0.156,0.44531,0.77088,0.52498,0.14276,0.00599,0.45226,0.77801,0.54581,0.14575,0.69168,0.00826,"{'TN': 10936, 'FP': 506, 'FN': 2604, 'TP': 954}"

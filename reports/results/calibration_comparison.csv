@@ -1,0 +1,4 @@
+method,test_log_loss,test_brier_score,test_ece
+Uncalibrated LightGBM,0.45226,0.14575,0.00826
+Platt Sigmoid (Logistic),0.45579,0.14649,0.02402
+Isotonic Regression,0.45449,0.14582,0.00711
